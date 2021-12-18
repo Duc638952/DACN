@@ -34,18 +34,42 @@
 
 <div class="container">
   <h3>DONCARE STUDIO MANAGEMENT WELCOM</h3>
-  
+  <?php
+    $sql = "SELECT * from product";
+    $objStatement = $objPDO->prepare($sql);
+    $objStatement->execute();
+    $n = $objStatement ->rowCount();
+    // echo "co $n ket qua";
+  ?>
   <ul class="list-group">
     <p><b>Overview</b></p>
-    <li class="list-group-item">DONCARE STUDIO have :  All Item</li>
+    <li class="list-group-item">DONCARE STUDIO have :<?php echo "$n" ?> All Item</li>
     <li class="list-group-item">DONCARE STUDIO have :
-         T-Shirts
+        <?php 
+            $sql = "SELECT * from product where cat_id='TS'";
+            $objStatement = $objPDO->prepare($sql);
+            $objStatement->execute();
+            $n = $objStatement ->rowCount();
+            echo "$n";
+        ?> T-Shirts
     </li>
     <li class="list-group-item">DONCARE STUDIO have :
-        Jackets
+        <?php 
+            $sql = "SELECT * from product where cat_id='JK'";
+            $objStatement = $objPDO->prepare($sql);
+            $objStatement->execute();
+            $n = $objStatement ->rowCount();
+            echo "$n";
+        ?> Jackets
     </li>
     <li class="list-group-item">DONCARE STUDIO have :
-         Bottoms
+        <?php 
+            $sql = "SELECT * from product where cat_id='BT'";
+            $objStatement = $objPDO->prepare($sql);
+            $objStatement->execute();
+            $n = $objStatement ->rowCount();
+            echo "$n";
+        ?> Bottoms
     </li>
   </ul>
 </div>
