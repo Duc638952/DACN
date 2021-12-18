@@ -1,0 +1,12 @@
+.navbar
+{
+    background-color:black;
+   
+    font-size: 14pt;
+}
+.navbar-brand{
+    font-style: oblique;
+}
+.list-group{
+    padding-top: 30px;
+}
